@@ -12,7 +12,7 @@ app.get("/greeting", (req, res) => {
 })
 
 app.get("/drinks", (req, res) => {
-    res.send(drinks)
+    res.render('index.ejs')
 })
 
 
