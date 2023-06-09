@@ -15,17 +15,16 @@
 <body>
     
     <h1>Welcome to gitPub</h1>
-    <ul>
-        
-        
+
     
+    <ul>
         <% for(let i = 0; i < drinks.length; i++) { %>
 
-            <li><%= drinks[i].name
+            <li><a href= "/drinks/<%= i %>"><%= drinks[i].name
             .split(' ')
             .map(x => x[0].toUpperCase() + x.substr(1).toLowerCase())
-            .join(' ')  %></li>
-
+            .join(' ')  
+            %></a></li>
         <% } %>
     </ul>
     
