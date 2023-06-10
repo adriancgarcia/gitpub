@@ -1,6 +1,6 @@
 const express = require("express")
 
-const drinks = require("./models/drinks.js")
+const drinks = require("./models/drinks")
 const app = express()
 
 
@@ -18,16 +18,13 @@ app.get("/drinks", (req, res) => {
 })
 
 
-// SHOW ROUTE
+// SHOW ROUTE - SHOWS ONE DRINK
 app.get("/drinks/:id", (req, res) => {
-    res.render('show.ejs', {drinks});
+    const id = req.params.id
+    const drink = drinks[id]
+    
+    res.render("show.ejs", {drink, id})
     });
-
-
-
-
-
-
 
 // Listener
 app.listen(3000, () => {

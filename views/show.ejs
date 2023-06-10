@@ -8,11 +8,18 @@
 </head>
 <body>
 
-    <h1>Drinks Show Page</h1>
+    <h1>At foo bar</h1>
 
-    <h2>name: <%= drinks.name %></h2>
+        <ul>
+            <li><h2>Name: <%= drink.name.split(' ')
+                .map(x => x[0].toUpperCase() + x.substr(1).toLowerCase())
+                .join(' ') %></h2></li>
+            <li><img <%= drink.image %> /></li>
+            <li><h3>Price: <%= drink.price %></h3></li>
+        </ul>
 
-    My favorite drinks is 
+   
+        
     
 
     <h3><a href="/drinks">Back to Drink List</a></h3>
