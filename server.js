@@ -20,10 +20,16 @@ app.get("/drinks", (req, res) => {
 
 // SHOW ROUTE - SHOWS ONE DRINK
 app.get("/drinks/:id", (req, res) => {
-    const id = req.params.id
-    const drink = drinks[id]
+    const id = req.params.id;
+    const drink = drinks[id];
     
-    res.render("show.ejs", {drink, id})
+    // const images = document.getElementsByTagName(img);
+        // for (let i = 0; i < images.length; i++) {
+        
+        //     images[i] = images[i] + '.' + extension;
+//         // }
+// console.log(drinks, id)
+    res.render("show.ejs", {drink})
     });
 
 // Listener

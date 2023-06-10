@@ -14,7 +14,7 @@
             <li><h2>Name: <%= drink.name.split(' ')
                 .map(x => x[0].toUpperCase() + x.substr(1).toLowerCase())
                 .join(' ') %></h2></li>
-            <li><img <%= drink.image %> /></li>
+            <li><img src=" <%= drink.image  %>.jpeg"/></li>
             <li><h3>Price: <%= drink.price %></h3></li>
         </ul>
 
