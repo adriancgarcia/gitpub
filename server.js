@@ -4,6 +4,10 @@ const drinks = require("./models/drinks")
 const app = express()
 
 
+// NIDDLEWARE
+app.use(express.static("public")) // treat the public folder as a static file server
+
+
 
 
 
@@ -14,22 +18,16 @@ app.get("/greeting", (req, res) => {
 
 // INDEX ROUTE
 app.get("/drinks", (req, res) => {
-    res.render('index.ejs', {drinks})
+    res.render('drinks/index.ejs', {drinks})
 })
-
 
 // SHOW ROUTE - SHOWS ONE DRINK
 app.get("/drinks/:id", (req, res) => {
     const id = req.params.id;
     const drink = drinks[id];
     
-    // const images = document.getElementsByTagName(img);
-        // for (let i = 0; i < images.length; i++) {
-        
-        //     images[i] = images[i] + '.' + extension;
-//         // }
 // console.log(drinks, id)
-    res.render("show.ejs", {drink})
+    res.render("drinks/show.ejs", {drink})
     });
 
 // Listener

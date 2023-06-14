@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drinks Show Page</title>
+    <%- include("../import.ejs") %>
+</head>
+<body>
+    <h1>At foo bar</h1>
+    <div class="row" id="beverage">
+        <div class="column1">
+            <h2><%= drink.name.split(' ')
+                .map(x => x[0].toUpperCase() + x.substr(1).toLowerCase())
+                .join(' ') %></h2>
+            <h3>$<%= drink.price %></h3>
+        </div>
+        <div class="column2">
+            <img src=" <%= drink.image  %>.jpeg"/>
+        </div>
+    </div>
+        <h3><a href="/drinks">Back to Drink List</a></h3>
+    
+</body>
+</html>
